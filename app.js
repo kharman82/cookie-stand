@@ -1,14 +1,21 @@
 'use strict'
 
-var seattle = {
+// define constructor
+
+var cookies =[];
+
+// new code added and replaced var's
+function seattle(minCust, maxCust, avgCookies, time, hoursOpen, cookieArray,cookieSum,) {
     location: 'seattle',
-    minCust: 23,
-    maxCust: 65,
-    avgCookies: 6.3,
-    time: ['6am ', '7am ', '8am ', '9am ', '10am ', '11am ', '12pm ', '1pm ', '2pm ', '3pm ', '4pm ', '5pm ', '6pm ', '7pm ',],
-    hoursOpen: 14,
-    cookieArray: [],
-    cookieSum: 0,
+    this.minCust = minCust: 23,
+    this.maxCust = maxCust: 65,
+    this.avgCookies = avgCookies: 6.3,
+    this.time = time: ['6am ', '7am ', '8am ', '9am ', '10am ', '11am ', '12pm ', '1pm ', '2pm ', '3pm ', '4pm ', '5pm ', '6pm ', '7pm ',],
+    this.hoursOpen = hoursOpen: 14,
+    this.cookieArray = cookieArray: [],
+    this.cookieSum = cookieSum: 0,
+    cookies.push(this);
+    }
 
     random: function() {
         for (var i =0; i < this.hoursOpen; i++) {
@@ -19,7 +26,7 @@ var seattle = {
     this.cookieArray.push(cphr);
 
         }
-    },
+    }
     
 
     daily: function() {
@@ -28,11 +35,11 @@ var seattle = {
     for (var i =0; i < this.hoursOpen; i++) {
         var seattleList= document.getElementById('seattleList');
         var seattleChildEl= document.createElement('li');
-        seattleList.appendChild('seattleChildEl');
+        seattleList.appendChild(seattleChildEl);
         seattleChildEl.textContent = (this.time[i] + this.cookieArray[i] + ' cookies ');
      
     }
-   }, 
+   } 
    dailySum: function() {
        this.random();
        var something =0;
