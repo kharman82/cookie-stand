@@ -28,7 +28,7 @@ var seattle = {
     for (var i =0; i < this.hoursOpen; i++) {
         var seattleList= document.getElementById('seattleList');
         var seattleChildEl= document.createElement('li');
-        seattleList.appendChild(seattleChildEl);
+        seattleList.appendChild('seattleChildEl');
         seattleChildEl.textContent = (this.time[i] + this.cookieArray[i] + ' cookies ');
      
     }
