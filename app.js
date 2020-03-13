@@ -26,17 +26,21 @@ function StoreCreator (location, minCust, maxCust, avgCookies, hoursOpen) {
     console.log (stores);
 
     
-// seattle.prototype.random = function() {
-//         for (var i =0; i < this.hoursOpen; i++) {
-//     var total= Math.floor(Math.random() * ( this.maxCust - this.minCust) + this.minCust + 1);
-//     var cphr= Math.floor(total * this.avgCookies)
-//     var totalCookie1= [total, cphr]
-//     console.log (totalCookie1);
-//     this.cookieArray.push(cphr);
+StoreCreator.prototype.random = function() {
+        var bonus = []
+            for (var i =0; i < this.hoursOpen; i++) {
+        var total= Math.floor(Math.random() * ( this.maxCust - this.minCust) + this.minCust + 1);
+        var cphr= Math.floor(total * this.avgCookies)
+        var totalCookie1= [total, cphr]
+            console.log (totalCookie1);
+            bonus.push(totalCookie1);
+            // this.cookieArray.push(cphr);
+        };
+        return bonus
+    };
+    // console.log(seattle);
+    seattle.random();
 
-//         };
-//     };
-    
 
 //     seattle.prototype.daily = function() {
 //         var hourlyCookies= this.random();
