@@ -92,11 +92,12 @@ console.log(dailySum);
 }
 
 function createRow (object) {
-var row = document.createElement('tr');
-var cell = document.createElement('td');
+    var tableEl = document.getElementById('table');    
+    var row = document.createElement('tr');
+    var cell = document.createElement('td');
 cell.textContent = object.location;
 row.appendChild(cell);
-table.appendChild(row);
+tableEl.appendChild(row);
 }
 
 createRow(seattle);
