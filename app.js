@@ -40,7 +40,7 @@ StoreCreator.prototype.random = function() {
         for (var i =0; i < this.hoursOpen; i++) {
             var total= Math.floor(Math.random() * ( this.maxCust - this.minCust + 1) + this.minCust);
             var cphr= Math.floor(total * this.avgCookies);
-            var totalCookie1= [total, cphr];
+            var totalCookie1= cphr;
             console.log (totalCookie1);
             bonus.push(totalCookie1);
            
@@ -63,7 +63,7 @@ StoreCreator.prototype.writeRow = function () {
 
 for (var i = 0; i < this.cookieSoldHr.length; i++) {
     cell = document.createElement('td');
-    cell.textContent = this.cookieSoldHr[i][1];
+    cell.textContent = this.cookieSoldHr[i];
     row.appendChild(cell);
 }
 
@@ -98,26 +98,29 @@ function writeFooter() {
     footerCell.textContent = 'Totals';
     footerRow.appendChild(footerCell);
 
-    for (var hour = 0; hour < hours; hour++) {
+    for (var i = 0; i < hours; i++) {
         var hourlySum = 0;
         footerCell = document.createElement('td');
-            for (var store = 0; store < stores.length; store++) {
-            hourlySum = hourlySum + stores[store].cookieSoldHr[hour];
-    }
-    dailySum += hourlySum;
-    footerCell.textContent = hourlySum;
-    footerRow.appendChild(footerCell);
+        
+            for (var j = 0; j < stores.length; j++) {
+                hourlySum = hourlySum + stores[j].cookieSoldHr[i];
 
-    
-}
+            }
+            footerCell.textContent = hourlySum;
+            footerRow.appendChild(footerCell);
+        }
 
 footerCell = document.createElement('td');
+dailySum += hourlySum;
+
 footerCell.textContent = dailySum;
 footerRow.appendChild(footerCell);
-console.log(hourlySum);
+// console.log(hourlySum);
 tableEl.appendChild(footerRow);
-console.log(dailySum);
+// console.log(dailySum);
+
 }
+
 
 writeHeader()
 
