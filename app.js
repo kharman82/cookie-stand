@@ -16,7 +16,7 @@ function StoreCreator (location, minCust, maxCust, avgCookies, hoursOpen) {
     this.hoursOpen = hoursOpen; 
     this.sales = this.random();
     console.log (this.sales);
-    this.cookieSoldHr = this.sales[1];
+    this.cookieSoldHr = this.sales;
     stores.push(this);
     }
 
@@ -24,7 +24,7 @@ function StoreCreator (location, minCust, maxCust, avgCookies, hoursOpen) {
 StoreCreator.prototype.random = function() {
         var bonus = []
         for (var i =0; i < this.hoursOpen; i++) {
-            var total= Math.floor(Math.random() * ( this.maxCust - this.minCust) + this.minCust + 1);
+            var total= Math.floor(Math.random() * ( this.maxCust - this.minCust + 1) + this.minCust);
             var cphr= Math.floor(total * this.avgCookies);
             var totalCookie1= [total, cphr];
             console.log (totalCookie1);
@@ -34,12 +34,7 @@ StoreCreator.prototype.random = function() {
         return bonus;
     };
    
-    var seattle = new StoreCreator('seattle', 23, 65, 6.3, 14);
-    var tokyo = new StoreCreator('tokyo', 3, 24, 1.2, 14);
-    var dubai = new StoreCreator('dubai', 11, 38, 3.7, 14);
-    var paris = new StoreCreator('paris', 20, 38, 2.3, 14);
-    var lima = new StoreCreator('lima', 2, 16, 4.6, 14);
-    console.log (stores);
+   
 
 //table beginning
 var tableEl = document.getElementById('table');
@@ -54,7 +49,7 @@ StoreCreator.prototype.writeRow = function () {
 
 for (var i = 0; i < this.cookieSoldHr.length; i++) {
     cell = document.createElement('td');
-    cell.textContent = this.cookieSoldHr[i];
+    cell.textContent = this.cookieSoldHr[i][1];
     row.appendChild(cell);
 }
 
@@ -71,7 +66,7 @@ function writeFooterRow() {
     cell.textContent = 'Totals';
     row.appendChild(cell);
 
-    for (var hour = 0; hour, hours; hour++) {
+    for (var hour = 0; hour < hours; hour++) {
         var hourlySum = 0;
         cell = document.createElement('td');
         for (var store = 0; store < stores.length; store++) {
@@ -91,17 +86,18 @@ tableEl.appendChild(row);
 console.log(dailySum);
 }
 
-function createRow (object) {
-    var tableEl = document.getElementById('table');    
-    var row = document.createElement('tr');
-    var cell = document.createElement('td');
-cell.textContent = object.location;
-row.appendChild(cell);
-tableEl.appendChild(row);
-}
 
-createRow(seattle);
-createRow(tokyo);
-createRow(dubai);
-createRow(paris);
-createRow(lima);
+var seattle = new StoreCreator('seattle', 23, 65, 6.3, 14);
+var tokyo = new StoreCreator('tokyo', 3, 24, 1.2, 14);
+var dubai = new StoreCreator('dubai', 11, 38, 3.7, 14);
+var paris = new StoreCreator('paris', 20, 38, 2.3, 14);
+var lima = new StoreCreator('lima', 2, 16, 4.6, 14);
+console.log (stores);
+
+function makeTableBody() {
+    for (var i = 0; i < stores.length; i++) {
+    stores[i].writeRow()
+    }
+
+}
+makeTableBody()
