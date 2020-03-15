@@ -4,7 +4,21 @@
 
 var stores =[];
 var hours = 14
-
+var time = [
+    '6am',
+    '7am',
+    '8am',
+    '9am',
+    '10am',
+    '11am',
+    '12pm',
+    '1pm',
+    '2pm',
+    '3pm',
+    '4pm',
+    '5pm',
+    '6pm',
+]
 // new code added and replaced var's
 function StoreCreator (location, minCust, maxCust, avgCookies, hoursOpen) {
     this.location = location;
@@ -57,35 +71,55 @@ cell = document.createElement('td');
 cell.textContent = this.totalCookie1;
 row.appendChild(cell);
 }
+function writeHeader() {
+    var headerEl = document.getElementById('table');
+    var headerRow = document.createElement('tr');
+    var headerCell = document.createElement('td');
+    headerCell.textContent = 'Time';
+    headerRow.appendChild(headerCell);
+    headerEl.appendChild(headerRow);
 
-function writeFooterRow() {
+for(var i = 0; i < time.length; i++){
+    headerCell = document.createElement('td');
+    headerCell.textContent = time[i];
+    headerRow.appendChild(headerCell);
+    }
+    headerCell =document.createElement('td');
+    headerCell.textContent = 'Daily Totals';
+    headerRow.appendChild(headerCell);
+    headerEl.appendChild(headerRow);
+}
+
+function writeFooter() {
     var dailySum = 0;
     var tableEl = document.getElementById('table');
-    var row = document.createElement('tr');
-    var cell = document.createElement('td');
-    cell.textContent = 'Totals';
-    row.appendChild(cell);
+    var footerRow = document.createElement('tr');
+    var footerCell = document.createElement('td');
+    footerCell.textContent = 'Totals';
+    footerRow.appendChild(footerCell);
 
     for (var hour = 0; hour < hours; hour++) {
         var hourlySum = 0;
-        cell = document.createElement('td');
-        for (var store = 0; store < stores.length; store++) {
-        hourlySum = hourlySum + stores[store].cookieSoldHr[hour];
+        footerCell = document.createElement('td');
+            for (var store = 0; store < stores.length; store++) {
+            hourlySum = hourlySum + stores[store].cookieSoldHr[hour];
     }
-    cell.textContent = hourlySum;
-    row.appendChild(cell);
-
     dailySum += hourlySum;
+    footerCell.textContent = hourlySum;
+    footerRow.appendChild(footerCell);
+
+    
 }
 
-cell = document.createElement('td');
-cell.textContent = dailySum;
-row.appendChild(cell);
+footerCell = document.createElement('td');
+footerCell.textContent = dailySum;
+footerRow.appendChild(footerCell);
 console.log(hourlySum);
-tableEl.appendChild(row);
+tableEl.appendChild(footerRow);
 console.log(dailySum);
 }
 
+writeHeader()
 
 var seattle = new StoreCreator('seattle', 23, 65, 6.3, 14);
 var tokyo = new StoreCreator('tokyo', 3, 24, 1.2, 14);
@@ -100,4 +134,8 @@ function makeTableBody() {
     }
 
 }
+
 makeTableBody()
+writeFooter()
+
+
