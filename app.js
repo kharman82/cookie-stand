@@ -18,6 +18,7 @@ var time = [
     '4pm',
     '5pm',
     '6pm',
+    '7pm',
 ]
 // new code added and replaced var's
 function StoreCreator (location, minCust, maxCust, avgCookies, hoursOpen) {
@@ -41,7 +42,7 @@ StoreCreator.prototype.random = function() {
             var total= Math.floor(Math.random() * ( this.maxCust - this.minCust + 1) + this.minCust);
             var cphr= Math.floor(total * this.avgCookies);
             var totalCookie1= cphr;
-            console.log (totalCookie1);
+            // console.log (totalCookie1);
             bonus.push(totalCookie1);
            
         };
@@ -60,16 +61,18 @@ StoreCreator.prototype.writeRow = function () {
     cell.textContent = this.location;
     row.appendChild(cell);
     tableEl.appendChild(row);
-
+var totalCustomerCookies = 0
 for (var i = 0; i < this.cookieSoldHr.length; i++) {
     cell = document.createElement('td');
     cell.textContent = this.cookieSoldHr[i];
     row.appendChild(cell);
+    totalCustomerCookies = totalCustomerCookies + this.cookieSoldHr [i];
 }
-
+console.log (totalCustomerCookies);
 cell = document.createElement('td');
-cell.textContent = this.totalCookie1;
+cell.textContent = totalCustomerCookies;
 row.appendChild(cell);
+tableEl.appendChild(row);
 }
 function writeHeader() {
     var headerEl = document.getElementById('table');
