@@ -1,0 +1,163 @@
+body {
+    width: 900px;
+    background-image: linear-gradient(rgb(248, 124, 145), rgb(145, 17, 145));
+
+}
+
+header {
+    width: 900px;
+    height: 75px;
+    background-image: linear-gradient(rgb(248, 124, 145), rgb(145, 17, 145));
+}
+
+headrer div {
+    width: 900px;
+}
+
+h1 {
+    display: inline-block;
+    width: 500px;
+    height: 73px;
+    text-align: center;
+    font-weight: bolder;
+    font-size: 300%;
+    font-style: italic;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+#links { 
+    display: inline-block;
+    width: 395px;
+    text-align: center;
+}
+
+a {
+    margin-right: 20px;
+}
+main {
+    width: 900px;
+
+}
+
+#bigFish img {
+    max-width: 400px;
+    margin-left: 250px;
+}
+
+#text p {
+    font-size: large;
+    font-family: Arial, Helvetica, sans-serif;
+    font-style: oblique;
+}
+footer {
+    width: 900px;
+    background-image: linear-gradient(rgb(245, 69, 172), rgb(145, 17, 145));
+    height: 600px;
+}
+
+#icons {
+    width: 350px;
+    display: inline-block;
+
+}
+#copyright {
+    width: 400px;
+    display: inline-block;
+    font-size: larger;
+    font-weight: bolder;
+    font-style: italic;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+
+#family {
+    display: inline-block;
+    width: 900px;
+    margin-top: 30px;
+
+}
+#family img {
+    width: 900px;
+}
+
+/* page 2  */
+
+#table {
+    width: 505px;
+    display: inline-block;
+    margin-left: 180px;
+    color: rgb(114, 18, 77);
+}
+
+#salesTitle {
+    display: inline-block;
+    width: 900px;
+    text-align: center;
+    font-weight: bolder;
+    font-size: 300%;
+    font-style: italic;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: rgb(111, 24, 192);
+}
+
+
+#pic3 {
+    width: 265px;
+    display: inline-block;
+    margin-left: 90px;
+}
+#pic3 img {
+    width: 200px;
+}
+
+#pic4 {
+    width: 275px;
+    display: inline-block;
+}
+#pic4 img {
+    width: 200px;
+}
+
+#pic5 {
+    width: 245px;
+    display: inline-block;
+}
+#pic5 img {
+    width: 200px;
+}
+
+h3 {
+    display: inline-block;
+    margin-top: 30px;
+    margin-bottom: 50px;
+    width: 900px;
+    text-align: center;
+    font-weight: bolder;
+    font-size: 300%;
+    font-style: italic;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: rgb(111, 24, 192);
+}
+
+footer {
+    margin-top: 100px;
+    background-image: linear-gradient(rgb(185, 78, 144), rgb(145, 17, 145));
+
+}
+#foot1 {
+    width: 350PX; 
+    margin-left: 270px;
+    font-size: large;
+    color: whitesmoke;
+    font-weight: bolder;
+    font-style: italic;
+}
+
+#foot2 {
+    width: 350PX;
+    margin-left: 270px;
+    font-size: large;
+    color: whitesmoke;
+    font-weight: bolder;
+    font-style: italic;
+}
